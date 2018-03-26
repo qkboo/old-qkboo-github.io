@@ -166,9 +166,9 @@ sudo lsof -i :4000
 ```
 
 <br/>
-##### **jekyll** 명령 옵션
+##### **bunlde** 명령
 
-URL Root 위치를  *--baseurl* 로 변경
+`bundle` 명령을 사용해 jekyll 을 실행할 수 있다. 또한 URL Root 위치를  *--baseurl* 로 변경
 
 ```
 $ bundle exec jekyll serve -w --baseurl '/'
