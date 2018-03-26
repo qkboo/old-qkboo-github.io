@@ -176,13 +176,13 @@ $ bundle exec jekyll serve -w --baseurl '/'
 Port 변경
 
 ```
-$ bundle exec jekyll server -w --baseurl '/' --port 4000
+$ bundle exec jekyll serve -w --baseurl '/' --port 4000
 ```
 
 디버그 메시지 출력 *--trace*:
 
 ```
-$ bundle exec jekyll server -w --trace
+$ bundle exec jekyll serve -w --trace
 ```
 
 
