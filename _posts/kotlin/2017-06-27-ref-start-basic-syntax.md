@@ -37,15 +37,20 @@ import java.util.*
 
 함수는 **fun** 키워드로 선언한다
 
-> fun name(var:Type,,,)[:Return Type] { 
-> 
-> }
+```kotlin
+fun name(var:Type,,,)[:Return Type] { 
+ 
+}
+```
 
 코드의 시작점으로 *main* 함수를 사용한다.
 
 ```kotlin
-fun main(args: Array<String>) {}
+fun main(args: Array<String>) {
+
+}
 ```
+
 
 다음 함수는 두개의 *Int* 매개변수를 가지고 반환 형식으로 *Int*를 선언하고 있다:
 
@@ -119,7 +124,7 @@ foo = 20
 ![](/images/kotlin/kotlin-error-val-reassigned.png){: width="500"}
 
 
-#### 지역변수
+#### val: 불변형 변수 선언
 
 함수 안에서 지역변수를 선언한다.
 
@@ -212,6 +217,28 @@ fun max(a: Int, b: Int) = if (a > b) a else b
 
 Null-safety 기법으로 *null*{:.keyword}에 안전한 코드를 작성하게 제공하기 위해서 *?*{:.keyword} Null-safety 키워드를 사용할 수 있다.
 이것은 변수 참조시 *null*{:.keyword} 값 가능성이 있으면, *null*{:.keyword} 일 수 있음을 명시해서 널에 안전한 코드를 만들 수 있다. 
+
+아래 같이 `null`  인 값이 지정되면 컴파일 에러를 보인다.
+
+![](images/kotlin/kotlin-nullsafety-null.png){: width="500"}
+
+여기에 null-safety `?` 를 선언해주면 컴파일 에러가 없이 `null`  경우 null 값으로 취급한다.
+
+![](images/kotlin/kotlin-nullsafety.png){: width="500"}
+
+그런데 꼭 `null` 체크를 해야 한다면 `!!`{:.keyword} 연산자를 변수에 붙여 준다.
+
+```kotlin
+fun main(args: Array<String>) {
+    var name:String?
+    name = null
+    print( name!!  )
+}
+```
+
+이제 name이 `null` 이면 NullPointException을 발생한다.
+
+#### 널 반환
 
 아래 parseInf()라는 함수를 선언시 반환 형식에 다음 같이 *Int?*{:.keyword} 안전호출 연산자를 붙여 반환식에 사용하면 값이 *null*{:.keyword}이 아니면 값을, 반대면 *null*{:.keyword}을 반환한다.
 

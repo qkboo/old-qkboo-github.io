@@ -81,6 +81,31 @@ fun main(args: Array<String>) {
 실행된 결과는 화면 아래 Run tool 윈도우에 표시됩니다.
 
 
+
+### Theme 변경
+
+ntellij 뿐만 아니라 JetBrain 제품들 모두 테마를 변경할 수 있다.
+기본적으로 Preferences -> Appearance -> Theme 에 Default 외 darcula(어두움) 가 있지만
+
+#### 사용자 테마 가져오기
+
+[http://color-themes.com](http://color-themes.com) 에서 에디터를 지원하는 다양한 커스텀 테마 파일을 다운 받을 수 있다. 테마 파일을 다운받으면 thema_file.jar 로 다운로드 된다.
+
+IDEA에서 `File -> Import Settings` 으로 thema_file.jar  를 들여온다. 들여오기를 성공하면 재시작 다이얼로그에서 재시작을 한다.
+
+#### Theme plugin
+
+IDEA의 Plugin으로 IDEA의 UI & Editor Theme 를 제공한다.
+
+
+![](images/kotlin/intellij-pref-plugin-theme1.png)
+
+설치후 재시작하면 전체 UI 테마 변경 경고가 보이고 테마가 변경된다.
+
+![](images/kotlin/intellij-pref-plugin-theme2.png)
+
+
+
 ## 참조
 
 [^2]: [IntelliJ What's new](https://www.jetbrains.com/idea/whatsnew/)

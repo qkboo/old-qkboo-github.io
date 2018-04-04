@@ -98,6 +98,42 @@ AS 2.x 버전을 사용하면 Java 코드를 Kotlin 코드로 변환해야 하�
 <br/>
 
 
+
+### Trouble shooting
+
+#### Outdated Kotlin Runtime message
+
+아래 메시지는 코틀린 표준라이브러리 버전과 AS의 플러그인 버전과 대비되어 표시된다. 
+
+메시지 창
+
+![](images/kotlin/as-kotlin-plugin-message.png)
+
+
+```
+PM 10:31  Outdated Kotlin Runtime
+        Your version of Kotlin runtime in 'Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.51@jar' library is 1.1.51, while plugin version is 1.2.31-release-Studio3.1-1.
+```
+
+모듈 그래들의 의존성에 
+
+```
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+```
+
+kotlin-stdlib 가 `$kotlin_version` 으로 치환되어 있고, 이것은 프로젝트 그래들 파일에 선언되어 있다. 
+
+```
+buildscript {
+    ext.kotlin_version = '1.1.51'
+}
+```
+
+이 버전을 1.2.31로 갱신해 주고 동기화를 한다.
+
 ## 참조
 
 [^1]: [Androdi Studio Preview 버전 설치](https://developer.android.com/studio/preview/install-preview.html)
